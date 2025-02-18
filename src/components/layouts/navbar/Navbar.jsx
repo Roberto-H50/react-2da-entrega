@@ -13,8 +13,9 @@ const Navbar = () => {
       }}
     >
       <Link to="/">
+      <h2>Angel Barber</h2>
         <img
-          src="https://res.cloudinary.com/dnqfh2chg/image/upload/v1738194670/68530/images_rrtrpk.png"
+          src=""
           alt=""
           style={{
             width: "100px",

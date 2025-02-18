@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { products } from "../../../products";
-import ProductCard from "../../common/productCard/ProductCard";
+import ProductCard from "../../common/productCart/ProductCart";
 import { useEffect } from "react";
 import { useParams } from "react-router";
+
 
 const ItemListContainer = () => {
   const { name } = useParams();
