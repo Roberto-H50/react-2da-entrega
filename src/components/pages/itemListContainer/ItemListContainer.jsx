@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { products } from "../../../products";
+//import { products } from "../../../products";
 import ProductCard from "../../common/productCart/ProductCart";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 
+
+import { db } from "../../../firebaseConfig";
+import { getDocs, collection, addDoc, query,where } from "firebase/firestore";
+//import { getDocs, collection, addDoc, query, where } from "firebase/firestore";
+ 
 
 const ItemListContainer = () => {
   const { name } = useParams();
@@ -11,33 +16,34 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // let arrayFiltrado;
-    // if (name) {
-    //   arrayFiltrado = products.filter((elemento) => elemento.category === name);
-    // }
 
-    let arrayFiltrado = products.filter(
-      (elemento) => elemento.category === name
-    );
+    const coleccionDeProductos = collection(db, "products");
+    let consulta = coleccionDeProductos;
 
-    const getProducts = new Promise((resolve, reject) => {
-      let permiso = true;
-      if (permiso) {
-        resolve(name ? arrayFiltrado : products);
-      } else {
-        reject({ status: 400, message: "algo salio mal" });
-      }
-    });
+    if (name) {
+      const coleccionFiltrada = query(
+        coleccionDeProductos,
+        where("category", "==", name)
+      );
+      consulta = coleccionFiltrada;
+    }
 
-    // let items = []
-    getProducts
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((error) => {
-        console.log(error);
+    const getProducts = getDocs(consulta);
+
+    getProducts.then((res) => {
+      let newArray = res.docs.map((elemento) => {
+        return { id: elemento.id, ...elemento.data() };
       });
+      setItems(newArray);
+    });
   }, [name]);
+
+  //const rellenar = () => {
+   // let productsCollecion = collection(db, "productos")
+   // products.forEach( (product) =>{
+    //  addDoc (productsCollecion,product )
+   // });
+ // };
 
   // {}.title
   // undefined
@@ -52,8 +58,9 @@ const ItemListContainer = () => {
         marginTop: "16px",
       }}
     >
+      {/*<button onClick={rellenar}>rellenar db</button>*/}
       {items.map((item) => {
-        return (
+       return (
           <ProductCard
             key={item.id}
             price={item.price}

@@ -1,15 +1,15 @@
 export let products = [
     {
-        id: "1",
+       // id: "1",
         title: "SuperTaper",
         price:  144.000,
         stock: 2,
         category: "Maquinas",
         description: "maquina de corte Uso Profesional, con cable",
-        ImageUrl: "https://res.cloudinary.com/dwhbkeafk/image/upload/v1739738750/supertaper-acable_kwvdjw.png"
+        ImageUrl: "https://res.cloudinary.com/dwhbkeafk/image/upload/v1739738750/supertaper-acable_kwvdjw.png",
     },
     {
-      id: "2",
+     // id: "2",
       title: "Detailer",
       price: 150000,
       stock: 5,
@@ -19,7 +19,7 @@ export let products = [
         "https://res.cloudinary.com/dwhbkeafk/image/upload/v1739738599/detailer-acable_lvoqlo.png",
     },
     {
-      id: "3",
+    //  id: "3",
       title: "Legend",
       price: 190000,
       stock: 4,
@@ -30,7 +30,7 @@ export let products = [
         "https://res.cloudinary.com/dwhbkeafk/image/upload/v1739738736/legend-inab_uo9pjx.png",
     },
     {
-      id: "4",
+     // id: "4",
       title: "Tijera Pulir",
       price: 18900,
       stock: 6,
@@ -40,7 +40,7 @@ export let products = [
         "https://res.cloudinary.com/dwhbkeafk/image/upload/v1739738875/tijera-pulir-cobalt5.5pointcut_uukn9t.png",
     },
     {
-        id: "5",
+      //  id: "5",
         title: "Tijera de Corte",
         price: 19900,
         stock: 6,
@@ -50,7 +50,7 @@ export let products = [
           "https://res.cloudinary.com/dwhbkeafk/image/upload/v1739738869/tijerafnavj-pontcut-cobal5.5_earytb.png",
       },
       {
-        id: "6",
+       // id: "6",
         title: "Hoja de gillette",
         price: 2000,
         stock: 20,
@@ -60,7 +60,7 @@ export let products = [
           "https://res.cloudinary.com/dwhbkeafk/image/upload/v1739738932/gillette_jqnejo.png",
       },
       {
-        id: "7",
+       // id: "7",
         title: "Papel para cuello",
         price: 12500,
         stock: 6,
