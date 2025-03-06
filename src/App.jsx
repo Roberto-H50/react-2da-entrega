@@ -4,10 +4,16 @@ import { ItemDetail } from "./components/pages/itemDetail/ItemDetail";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 //import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router";
+import CartContextProvider from "./context/CartContext";
+//import DarkModeContextProvider from "./context/DarkModeContext";
+//import { Toaster } from "sonner";
+
 
 function App() {
   return (
     <BrowserRouter>
+    <CartContextProvider>
+    {/*<Toaster duration={2000} richColors />*/}
       <Navbar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
@@ -17,6 +23,7 @@ function App() {
 
         <Route path="*" element={<h2>404 not found</h2>} />
       </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
