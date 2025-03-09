@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { Link } from "react-router";
 
 const ProductCard = ({ price, title, stock, imageUrl, id }) => {
-  // const { price, title, stock } = props;
+  
 
   return (
     <div style={{ border: "2px solid black", width: "300px" }}>

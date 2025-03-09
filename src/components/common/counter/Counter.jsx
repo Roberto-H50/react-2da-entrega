@@ -1,8 +1,12 @@
-import { useState } from "react";
+
+import { useContext, useState } from "react";
+import { CartContext } from "../../../context/CartContext";
+
+import { toast } from "sonner"; 
 
 const Counter = ({ item }) => {
   const [contador, setContador] = useState(1);
-
+  const { addToCart } = useContext (CartContext);
   const sumar = () => {
     if (contador < item.stock) {
       setContador(contador + 1);
@@ -19,13 +23,11 @@ const Counter = ({ item }) => {
     }
   };
 
-  // cart = [ {} ]
   const onAdd = () => {
-    console.log("agregar al carrito");
-    // console.log(item);
-    // console.log(contador);
+
     let objetoParaElCarrito = { ...item, quantity: contador };
-    console.log(objetoParaElCarrito);
+    addToCart(objetoParaElCarrito);
+    toast.success("Producto agregado!", { duration: 5000, closeButton: true });
   };
 
   return (

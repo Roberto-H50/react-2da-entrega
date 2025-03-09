@@ -39,13 +39,7 @@ const ItemListContainer = () => {
     });
   }, [name]);
 
-  // const rellenar = () => {
-  //   let productsCollecion = collection(db, "products");
-
-  //   products.forEach((product) => {
-  //     addDoc(productsCollecion, product);
-  //   });
-  // };
+  
 
   return (
     <div>

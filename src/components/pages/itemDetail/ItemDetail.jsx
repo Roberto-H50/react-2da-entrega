@@ -4,10 +4,10 @@ import Counter from "../../common/counter/Counter";
 import { useParams } from "react-router";
 import { db } from "../../../firebaseConfig";
 import { collection, doc, getDoc } from "firebase/firestore"
+
 export const ItemDetail = () => {
   const { id } = useParams();
 
-  // id de useParams
   const [item, setItem] = useState({});
 
   useEffect(() => {
