@@ -19,7 +19,6 @@ const Cart = () => {
       confirmButtonText: "si, vaciar",
       denyButtonText: `No, dejar como estaba`,
     }).then((result) => {
-      console.log(result);
       if (result.isConfirmed) {
         resetCart();
         Swal.fire({
@@ -84,5 +83,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-

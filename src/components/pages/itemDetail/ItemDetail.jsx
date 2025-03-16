@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Counter from "../../common/counter/Counter";
 import { useParams } from "react-router";
 import { db } from "../../../firebaseConfig";
-import { collection, doc, getDoc } from "firebase/firestore"
+import { collection, doc, getDoc } from "firebase/firestore";
 
 export const ItemDetail = () => {
   const { id } = useParams();
@@ -11,12 +11,12 @@ export const ItemDetail = () => {
   const [item, setItem] = useState({});
 
   useEffect(() => {
-   let produtCollection = collection(db, "products")
-   let refDoc = doc(produtCollection, id)
-   const getProduct = getDoc(refDoc)
-   getProduct.then( (res) => {
-    setItem({id: res.id, ...res.data()})
-   });
+    let produtCollection = collection(db, "products");
+    let refDoc = doc(produtCollection, id);
+    const getProduct = getDoc(refDoc);
+    getProduct.then((res) => {
+      setItem({ id: res.id, ...res.data() });
+    });
   }, [id]);
 
   return (
