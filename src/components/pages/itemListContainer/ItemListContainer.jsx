@@ -12,7 +12,7 @@ import { getDocs, collection, addDoc, query, where } from "firebase/firestore";
 const ItemListContainer = () => {
   const { name } = useParams();
 
-  const [items, setItems] = useState([]); // {id, title ....}
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const coleccionDeProductos = collection(db, "products");

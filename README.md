@@ -1,4 +1,6 @@
-# React + Vite
+# Angel Barber
+
+### Es un proyecto sobre una Ecommer. Trabajo practico curso Coder
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
